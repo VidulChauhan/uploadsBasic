@@ -1,0 +1,1097 @@
+/* 
+ * Commit 1: Basic Reset and Design System
+ * Reasoning: We need a consistent base to build upon. 
+ * Defining CSS variables for the color palette ensures consistency across the site 
+ * and makes future updates easier (Design Detail #2).
+ * The custom font stack (Design Detail #1) is defined here to be used globally.
+ */
+
+:root {
+    /* Design Detail #2: Specific Color Palette */
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #ea7613;
+    /* Primary Orange */
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --black: #000;
+
+    /* Findoc Specific Colors */
+    --findoc-green: #05bf0c;
+    --findoc-red: #fc0707;
+    --findoc-grey: #f8f8f8;
+    --border-grey: #ebebeb;
+
+    /* Design Detail #1: Custom Font Stack */
+    --font-light: "futuralight", sans-serif;
+    --font-regular: "futurabook", sans-serif;
+    --font-medium: "futuramedium", sans-serif;
+    --font-bold: "futuraheavy", sans-serif;
+
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+
+/* Font Face Definitions */
+@font-face {
+    font-family: 'futurabook';
+    font-display: swap;
+    src: url('assets/fonts/futura_book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futuralight';
+    font-display: swap;
+    src: url('assets/fonts/futura_light.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futuramedium';
+    font-display: swap;
+    src: url('assets/fonts/futura_medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futuraheavy';
+    font-display: swap;
+    src: url('assets/fonts/futura_heavy.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Basic Reset & Typography */
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-regular);
+    font-size: 14px;
+    /* Bootstrap default was 1rem, but Findoc specified 14px in style2.css */
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-medium);
+    /* Headings often use medium/bold */
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+/* Container & Grid System (Simplified Bootstrap) */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col,
+.col-12,
+.col-md-6,
+.col-lg-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Grid columns simplified for commonly used sizes */
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Utility Classes */
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.pt-5 {
+    padding-top: 3rem !important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Custom Button Base */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s, background-color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+/* =========================================
+   Commit 2: Header & Navigation
+   Reasoning: Implementing unique "sticky" behavior 
+   and complex mega-menu layout (Design Detail #3).
+   ========================================= */
+
+/* Header Container */
+.header {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.relative-container {
+    position: relative;
+    min-height: 100px;
+}
+
+/* Logo */
+.headerLogo {
+    display: block;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 155px;
+    height: 28px;
+    z-index: 9997;
+    transition: all 0.4s ease;
+}
+
+.headerLogo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Design Detail #3: Sticky Header Animation */
+.fixheader {
+    top: 0;
+    height: 100px;
+    z-index: 9995;
+    transition: all 0.8s ease;
+    padding: 0;
+    background-color: var(--white);
+    position: relative;
+    /* Default state */
+}
+
+/* When sticky class is added (simulated here via .fix or just fixed-top if using JS later, 
+   but for now we style the base .fixheader behavior requested) */
+/* Note: The original site uses a class '.fix' added to body or header. 
+   Since this is CSS-only for now, we define the animation keyframes. */
+
+@keyframes headfix {
+    0% {
+        top: -180px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+/* Navigation (#mnav) */
+.fullmenubg {
+    position: relative;
+}
+
+#mnav {
+    padding-left: 0;
+    margin-top: 64px;
+    margin-bottom: 0;
+    list-style: none;
+    float: left;
+    transition: all 0.5s ease;
+}
+
+#mnav>li {
+    float: left;
+    margin: 0 14px;
+}
+
+#mnav>li>a {
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 0;
+    color: var(--black);
+    transition: all 0.5s ease;
+    position: relative;
+    font-family: var(--font-regular);
+}
+
+#mnav>li:hover>a {
+    color: var(--orange);
+}
+
+/* Top Section (Search) */
+#topsec {
+    position: absolute;
+    top: 14px;
+    right: 266px;
+    left: 220px;
+    padding: 0;
+    z-index: 9997;
+    display: flex;
+}
+
+#topsec span {
+    display: block;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    position: relative;
+}
+
+#topsec input {
+    width: 100%;
+    height: 30px;
+    padding: 5px 30px 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Design Detail #10: Remove default focus ring, use orange border */
+#topsec input:focus {
+    outline: 1px solid var(--orange);
+    border-color: transparent;
+}
+
+/* Login Section */
+.login {
+    position: absolute;
+    top: 13px;
+    right: 182px;
+    display: inline-block;
+    z-index: 9998;
+}
+
+.login>a {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 15px;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: var(--font-medium);
+}
+
+.login>a:hover {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+/* Design Detail #4: Primary Button "Glow" & Gradient */
+.opendemat {
+    display: inline-block;
+    color: var(--white);
+    background: linear-gradient(90deg, #f27829, #ff9649);
+    padding: 5px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px 0 #ff9652;
+    position: absolute;
+    top: 14px;
+    right: 0;
+    z-index: 9997;
+    font-family: var(--font-medium);
+    font-size: 14px;
+    border: none;
+    /* Ensure no border overrides gradient */
+}
+
+.opendemat:hover {
+    background: linear-gradient(90deg, #ff9649, #f27829);
+    /* Flip gradient */
+    box-shadow: none;
+    /* Remove shadow on hover */
+    color: var(--white);
+}
+
+/* Mobile Nav Toggle (Hidden on Desktop) */
+#mobnav {
+    display: none;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    z-index: 9998;
+    background-color: transparent;
+    border: none;
+    background-image: url('assets/mnav.svg');
+    /* If we had this asset, otherwise hamburger */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Responsive Handling (Basic structure) */
+@media (max-width: 991px) {
+    #mnav {
+        display: none;
+    }
+
+    /* Hide mega menu on tablet/mobile for now */
+    #topsec {
+        display: none;
+    }
+
+    .login {
+        right: 60px;
+        top: 20px;
+    }
+
+    .opendemat {
+        display: none;
+    }
+
+    /* Often hidden or moved in mobile view */
+    #mobnav {
+        display: block;
+        top: 15px;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .headerLogo {
+        width: 120px;
+        top: 16px;
+    }
+}
+
+/* =========================================
+   Commit 3: Hero Section & Animations
+   Reasoning: Creating the immersive entry point
+   with complex CSS animations (Design Details #5, #6, #7).
+   ========================================= */
+
+/* Banner Layout */
+.bannerWrap {
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+    padding-top: 40px;
+}
+
+.bannerSec {
+    display: flex;
+    padding: 10px 0;
+}
+
+.bannerMainHead {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-medium);
+    font-size: 30px;
+    line-height: 40px;
+    color: var(--black);
+}
+
+.cmnPara p {
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+/* Design Detail #5: Rotating Words Animation */
+.rotatingWords {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    color: var(--orange);
+    vertical-align: bottom;
+    height: 40px;
+    /* Constrain height */
+    overflow: hidden;
+    width: 250px;
+    /* Estimate width */
+}
+
+.rotatingWords span {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation: rotateWord 12s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+.rotatingWords span:nth-child(1) {
+    animation-delay: 0s;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.rotatingWords span:nth-child(2) {
+    animation-delay: 2.4s;
+}
+
+.rotatingWords span:nth-child(3) {
+    animation-delay: 4.8s;
+}
+
+.rotatingWords span:nth-child(4) {
+    animation-delay: 7.2s;
+}
+
+.rotatingWords span:nth-child(5) {
+    animation-delay: 9.6s;
+}
+
+@keyframes rotateWord {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    /* Exit */
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+/* Banner Inline Form */
+.homeBannerForm .opnDematAcfrm form {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background: #000;
+}
+
+.homeBannerForm input {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    height: 40px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.homeBannerForm button {
+    background: linear-gradient(90deg, #f27829, #ff9649);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px;
+    font-family: var(--font-medium);
+    cursor: pointer;
+}
+
+/* Stats Strip */
+.homeBannerStrip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background: linear-gradient(270deg, #fdf9f6, #fffdff 60%, #fff 80%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #ddd;
+    max-width: 480px;
+}
+
+.stripItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stripItemIcon img {
+    max-width: 40px;
+}
+
+.stripItemText p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.divider {
+    width: 1px;
+    height: 30px;
+    background-color: #faede4;
+}
+
+/* Right Area & Floating Animations (Detail #6) */
+.bannerRightCnt {
+    position: relative;
+    height: 400px;
+    /* Explicit height for positioning */
+}
+
+.bannerImg {
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.aicons {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Specific Positions matching style2.css analysis */
+.ani1 {
+    left: 10%;
+    top: 10%;
+    animation: circle 5s linear infinite;
+}
+
+.ani2 {
+    top: 20%;
+    left: 80%;
+    animation: circle 5.5s linear infinite reverse;
+}
+
+.ani3 {
+    right: 10%;
+    top: 50%;
+    animation: circle 6s linear infinite;
+}
+
+.ani4 {
+    left: 15%;
+    bottom: 20%;
+    animation: circle 7s linear infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg) translate(-15px) rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-15px) rotate(-360deg);
+    }
+}
+
+/* Floating Info Card (.bone) */
+.bone {
+    position: absolute;
+    top: 40px;
+    left: 40%;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 5px 3px 10px 0 rgba(150, 193, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 0;
+}
+
+.bone img {
+    width: 30px;
+}
+
+.bone p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #000;
+}
+
+/* Design Detail #7: Magic Line Scroll Indicator */
+.scrollbg {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 30px 0 0;
+    margin-bottom: 50px;
+    height: 200px;
+}
+
+/* Dashed Gradient Line Animation */
+.magicline {
+    display: block;
+    width: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    height: 196px;
+    overflow: hidden;
+}
+
+.magicline:after {
+    content: '';
+    width: 3px;
+    height: 283px;
+    position: absolute;
+    left: 2px;
+    bottom: -1px;
+    /* Complex gradient to create dashed effect */
+    background: linear-gradient(0deg, #ffad67 50%, transparent 0);
+    background-size: 2px 15px;
+    /* Vertical dashes */
+    animation: dash 5s linear infinite;
+    /* Adjusted speed */
+}
+
+@keyframes dash {
+    to {
+        background-position: 0 100%;
+    }
+}
+
+/* Design Detail #14: Pulse Animation */
+.magicdot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--orange);
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4px;
+    transform: rotate(45deg);
+    /* Pulse */
+    animation: out 1.5s ease-out infinite;
+}
+
+@keyframes out {
+    0% {
+        box-shadow: 0 0 0 0px var(--orange);
+    }
+
+    100% {
+        box-shadow: 0 0 0 15px rgba(255, 173, 103, 0);
+    }
+}
+
+/* =========================================
+   Commit 4: Main Content Sections (Retry)
+   Reasoning: Layout for Products Grid and 
+   Solutions Accordion (Design Details #8, #9, #11).
+   ========================================= */
+
+/* Products Section */
+.pbox {
+    display: block;
+    height: 350px;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 25px 0;
+    transition: all 0.5s ease;
+    border-radius: 12px;
+}
+
+.pbox:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pbox h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: var(--black);
+}
+
+.pbox p {
+    color: #7a7a7a;
+    font-size: 14px;
+}
+
+/* Design Detail #9: Product Box Arrow (SVG Swap) */
+.pbox a {
+    display: block;
+    width: 22px;
+    height: 22px;
+    margin: 20px auto 0;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+/* Default Arrow (Black/Grey) */
+.pbox a:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Cpath d='M11,0A11,11,0,1,0,22,11,11,11,0,0,0,11,0Zm0,21A10,10,0,1,1,21,11,10,10,0,0,1,11,21Zm0,0' fill='%23cccccc'/%3E%3Cpath d='M11,17l5-6-5-6v12Z' fill='%23cccccc'/%3E%3C/svg%3E");
+}
+
+/* Hover Arrow (Orange) */
+.pbox a:hover:after {
+    background-image: url("data:image/svg+xml,%0A%3Csvg id='arrow-right' xmlns='http://www.w3.org/2000/svg' width='22.5' height='22.5' viewBox='0 0 22.5 22.5'%3E%3Cpath id='Path_19984' data-name='Path 19984' d='M11.25,0A11.25,11.25,0,1,0,22.5,11.25,11.25,11.25,0,0,0,11.25,0Zm0,21.375A10.125,10.125,0,1,1,21.375,11.25,10.125,10.125,0,0,1,11.25,21.375Zm0,0' fill='%23f59e60'/%3E%3Cpath id='Path_19985' data-name='Path 19985' d='M171.594,128.139a.563.563,0,1,0-.741.847l4.016,3.514-4.016,3.514a.563.563,0,1,0,.741.847l4.5-3.938a.563.563,0,0,0,0-.847Zm0,0' transform='translate(-161.661 -121.25)' fill='%23f59e60'/%3E%3C/svg%3E%0A");
+}
+
+/* Solutions Accordion */
+.cardItem {
+    position: relative;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Design Detail #8: Card Hover Lift & Shadow */
+.cardItem:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    box-shadow: 0 16px 32px -12px rgba(93, 93, 152, 0.24);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.cardItem:hover:after,
+.cardItem.active:after {
+    height: 100%;
+}
+
+.cardItem.active {
+    margin-bottom: 20px;
+    border-left: 4px solid var(--orange);
+}
+
+.accHead {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.accHead h4 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.cardItem .card-body {
+    display: none;
+    padding: 0 20px 20px;
+}
+
+.cardItem.active .card-body {
+    display: block;
+}
+
+/* Arrow Button in Accordion */
+.arrwBtn {
+    display: inline-block;
+    padding: 10px 35px 10px 10px;
+    background: var(--white);
+    color: var(--black);
+    position: relative;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-family: var(--font-regular);
+}
+
+/* =========================================
+   Commit 5: Footer & Mobile Responsiveness
+   Reasoning: Complete footer styling and 
+   mobile off-canvas menu (Design Details #12, #15).
+   ========================================= */
+
+.FooterWrapper {
+    background-color: #2d2d2d;
+    position: relative;
+    color: #c9c9c9;
+    padding-top: 50px;
+}
+
+.FooterSubHead {
+    display: block;
+    color: var(--orange);
+    font-size: 17px;
+    line-height: 18px;
+    margin: 0 0 10px;
+    font-family: var(--font-bold);
+}
+
+.FooterMenuBox ul {
+    padding: 0;
+    list-style: none;
+}
+
+.FooterMenuBox a {
+    display: block;
+    font-size: 14px;
+    color: #c9c9c9;
+    padding: 0 0 5px;
+    transition: all 0.5s ease;
+}
+
+.FooterMenuBox a:hover {
+    color: var(--orange);
+}
+
+/* Registered Office Address */
+.Hmeaddress.loc:before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    /* Simulate location icon pin matching Findoc style */
+    border: 2px solid var(--orange);
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+    margin-right: 10px;
+}
+
+.FooterCopyrightSection {
+    background-color: #161616;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.FooterCopyrightWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* Design Detail #15: Mobile Off-Canvas Menu */
+.slidenav {
+    width: 280px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -310px;
+    /* Off-screen */
+    background-color: var(--light);
+    z-index: 9999;
+    transition: all 0.5s ease;
+    padding: 25px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.slidenav.open {
+    right: 0;
+}
+
+/* Mobile Breakpoints */
+@media (max-width: 991px) {
+    .bannerLftArea {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .bannerRightCnt {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 576px) {
+    .bannerMainHead {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .homeBannerForm input {
+        margin-bottom: 10px;
+    }
+
+    .homeBannerForm .opnDematAcfrm form {
+        flex-direction: column;
+    }
+
+    .rotatingWords {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .FooterMenuBox {
+        margin-bottom: 30px;
+    }
+}

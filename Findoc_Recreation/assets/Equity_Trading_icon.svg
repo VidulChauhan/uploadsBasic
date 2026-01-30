@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#bbe9bb"/>
+      <stop offset="1" stop-color="#b7f9b7"/>
+    </linearGradient>
+  </defs>
+  <g id="Equity_Trading_icon" transform="translate(-759 -290)">
+    <rect id="Rectangle_11500" data-name="Rectangle 11500" width="40" height="40" rx="20" transform="translate(759 290)" fill="url(#linear-gradient)"/>
+    <g id="Group_8620" data-name="Group 8620" transform="translate(0.167 3)">
+      <rect id="Rectangle_11556" data-name="Rectangle 11556" width="5" height="7" transform="translate(769.834 310)" fill="#fff" opacity="0.75"/>
+      <rect id="Rectangle_11557" data-name="Rectangle 11557" width="5" height="10" transform="translate(776.834 306.5)" fill="#fff" opacity="0.75"/>
+      <rect id="Rectangle_11558" data-name="Rectangle 11558" width="4" height="12.5" transform="translate(783.834 304.5)" fill="#fff" opacity="0.75"/>
+      <g id="Icons" transform="translate(766.834 295)">
+        <path id="Path_20004" data-name="Path 20004" d="M2.461,12.166a.489.489,0,0,0,.063,0,35.755,35.755,0,0,0,9.831-2.809A35.628,35.628,0,0,0,21.06,3.795L20.5,6.047a.462.462,0,0,0,.336.56.474.474,0,0,0,.112.014.462.462,0,0,0,.448-.35l.924-3.7A.462.462,0,0,0,21.87,2h-3.7a.462.462,0,0,0,0,.924h2.481A34.75,34.75,0,0,1,11.976,8.51,34.826,34.826,0,0,1,2.4,11.246a.462.462,0,0,0,.062.92Z" transform="translate(0 0)"/>
+        <path id="Path_20005" data-name="Path 20005" d="M21.871,28.939h-.462V16.462A.462.462,0,0,0,20.946,16H16.325a.462.462,0,0,0-.462.462V28.939h-.924v-9.7a.462.462,0,0,0-.462-.462H9.856a.462.462,0,0,0-.462.462v9.7H8.469V22.007a.462.462,0,0,0-.462-.462H3.386a.462.462,0,0,0-.462.462v6.932H2.462a.462.462,0,0,0,0,.924H21.871a.462.462,0,0,0,0-.924ZM16.787,16.924h3.7V28.939h-3.7ZM10.318,19.7h3.7v9.242h-3.7ZM3.848,22.469h3.7v6.469h-3.7Z" transform="translate(-0.001 -7.531)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b9d6ff"/>
+      <stop offset="1" stop-color="#d5e6ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Insurance_icon" transform="translate(-1219 -305)">
+    <rect id="Rectangle_11512" data-name="Rectangle 11512" width="50" height="50" rx="25" transform="translate(1219 305)" fill="url(#linear-gradient)"/>
+    <g id="insurance_6_" data-name="insurance (6)" transform="translate(1207.153 300.375)">
+      <path id="Path_20012" data-name="Path 20012" d="M30.751,22.692,30.092,24.7l.659,8.164.879,4.359L35.8,41.164l3.369,2.006,4.1-2.006,4.1-4.7,1.1-6.019V24.214l-.366-1.522-8.641-2.629Z" transform="translate(-2.211 -2.112)" fill="#fff" opacity="0.85"/>
+      <path id="Path_20009" data-name="Path 20009" d="M36.931,41.815a.461.461,0,0,0,.433,0l3.066-1.632a11.877,11.877,0,0,0,6.309-10.5V20.606a.461.461,0,0,0-.321-.439l-9.131-2.9a.462.462,0,0,0-.279,0l-9.131,2.9a.461.461,0,0,0-.321.439v9.073a11.876,11.876,0,0,0,6.309,10.5ZM28.476,29.679V20.943l8.671-2.749,8.671,2.749v8.735A10.957,10.957,0,0,1,40,39.37l-2.85,1.517L34.3,39.37a10.956,10.956,0,0,1-5.821-9.691Z" transform="translate(0 0)"/>
+      <path id="Path_20011" data-name="Path 20011" d="M51.054,58.07a1.426,1.426,0,0,0,1.015-.421l3.719-3.719A1.436,1.436,0,1,0,53.757,51.9l-2.7,2.7L49.9,53.445a1.436,1.436,0,1,0-2.031,2.03l2.174,2.174A1.426,1.426,0,0,0,51.054,58.07Zm-2.689-3.611a.515.515,0,0,1,.879-.364l1.485,1.484a.461.461,0,0,0,.651,0l3.028-3.028a.515.515,0,1,1,.728.728L51.418,57a.526.526,0,0,1-.728,0l-2.174-2.175A.511.511,0,0,1,48.364,54.459Z" transform="translate(-14.655 -25.22)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.208" y1="0.158" x2="0.892" y2="0.775" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ee642b"/>
+      <stop offset="1" stop-color="#e83"/>
+    </linearGradient>
+  </defs>
+  <g id="StokZ_Icon" transform="translate(-1203 -4023)">
+    <g id="Commodity_Trading_icon" transform="translate(444 3733)">
+      <rect id="Rectangle_11500" data-name="Rectangle 11500" width="40" height="40" rx="20" transform="translate(759 290)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Stockz_logo" transform="translate(346.375 351)">
+      <path id="Path_25753" data-name="Path 25753" d="M2107.47,3732h3.639l-5.252,5.836-3.469.091Z" transform="translate(-1230.193 -42.832)" fill="#ffb685"/>
+      <path id="Path_25751" data-name="Path 25751" d="M2086.84,3680.929l8.239-.429-12.873,14.59L2078,3690.8Z" transform="translate(-1210)" fill="#fff"/>
+      <path id="Path_25752" data-name="Path 25752" d="M2078,3745.332h8.325l8.925-9.869-4.377-4.463Z" transform="translate(-1210 -41.832)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

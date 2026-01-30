@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc57a"/>
+      <stop offset="1" stop-color="#ffc171"/>
+    </linearGradient>
+  </defs>
+  <g id="IPO_icon" transform="translate(-1219 -305)">
+    <rect id="Rectangle_11512" data-name="Rectangle 11512" width="50" height="50" rx="25" transform="translate(1219 305)" fill="url(#linear-gradient)"/>
+    <path id="Path_19999" data-name="Path 19999" d="M1245.667,318.833v9.75h10.25L1255,324.75l-1.75-2.917L1251.167,320l-3.084-1.167Z" fill="#fff" opacity="0.85"/>
+    <path id="Path_19998" data-name="Path 19998" d="M1241.667,321.75l-3.933,1.094-2.734,2.24-1.667,2.75-.833,4.333,1.167,3.833,1.75,2.583,2.916,2.167,3.75.917,4.084-.417,4.25-2.667,1.75-3.417.666-3-.666-.5h-9.584V321.75Z" fill="#fff" opacity="0.85"/>
+    <g id="_x31_01_x2C__Chart_x2C__Diagram_x2C__Finance_x2C__Graph" transform="translate(1222 308)">
+      <g id="Group_8561" data-name="Group 8561" transform="translate(10 10)">
+        <path id="Path_19996" data-name="Path 19996" d="M280.485,10a.485.485,0,0,0-.485.485V20.67a.485.485,0,0,0,.485.485H290.67a.485.485,0,0,0,.485-.485A10.664,10.664,0,0,0,280.485,10Zm.485,10.185v-9.2a9.713,9.713,0,0,1,9.2,9.2Z" transform="translate(-266.905 -10)"/>
+        <path id="Path_19997" data-name="Path 19997" d="M30.855,80.185h-9.7v-9.7A.485.485,0,0,0,20.67,70,10.67,10.67,0,1,0,31.34,80.67.485.485,0,0,0,30.855,80.185ZM20.67,90.37a9.7,9.7,0,0,1-.485-19.388V80.67a.485.485,0,0,0,.485.485h9.688A9.712,9.712,0,0,1,20.67,90.37Z" transform="translate(-10 -67.09)"/>
+      </g>
+    </g>
+  </g>
+</svg>
