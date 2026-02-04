@@ -1,0 +1,7 @@
+{
+  "name": "Events Hub",
+  "description": "Premium event management with AI sync and Google OAuth.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
