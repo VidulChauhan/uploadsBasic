@@ -1,0 +1,23 @@
+COMMAND_1_OUTPUT : {
+                        "message":"OTP sent",
+                        "loginSessionId":"aw2i72"
+                   }
+
+COMMAND_2_OUTPUT : {
+                         "message":"OTP verified",
+                         "sessionId":"aw2i72"
+                   }
+
+COMMAND_3_OUTPUT : {
+                        "access_token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZpZHVsY2hhdWhhbkBnbWFpbC5jb20iLCJzZXNzaW9uSWQiOiJhdzJpNzIiLCJpYXQiOjE3NzA4MzcyNjksImV4cCI6MTc3MDgzODE2OX0.7_VelGWkZyt6nQfnd513a29nO_8BFHjKDqL9WGHgQCA",
+                        "expires_in":900
+                   }
+
+COMMAND_4_OUTPUT : {
+                        "message":"Access granted",
+                        "user":{"email":"vidulchauhan@gmail.com",
+                        "sessionId":"aw2i72",
+                        "iat"::1770837269,
+                        "exp"::1770838169},
+                        "success_flag":"FLAG-dmlkdWxjaGF1aGFuQGdtYWlsLmNvbV9DT01QTEVURURfQVNTSUdOTUVOVA=="
+                   }
